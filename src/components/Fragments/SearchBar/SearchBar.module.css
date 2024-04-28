@@ -1,0 +1,24 @@
+.searchLayout {
+  width: 100%;
+  margin-bottom: 24px;
+  display: flex;
+}
+
+.searchBar {
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 30%;
+  font-size: 20px;
+}
+
+.searchBar::placeholder {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .searchBar {
+    max-width: 100%;
+  }
+}
