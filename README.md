@@ -28,3 +28,30 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+### Running the Project
+To run the project, follow these steps:
+<p>1. Clone this repository to your computer:</p>
+
+```
+git clone https://github.com/pratamawebdev/countrychronicle.git
+```
+
+<p>2. Enter the Project Directory:</p>
+
+```
+cd countrychronicle
+```
+
+<p>3. Dependency Installation:</p>
+
+```
+npm install
+```
+
+<p>4. Running the Project:</p>
+
+```
+npm run dev
+```
+The project will start running on http://localhost:5173 in your browser.
