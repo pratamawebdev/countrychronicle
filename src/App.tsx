@@ -8,6 +8,7 @@ import { gql, useQuery } from "@apollo/client";
 import ContentModal from "./components/Fragments/ContentModal";
 import SearchBar from "./components/Fragments/SearchBar";
 import Button from "./components/Elements/Button";
+import { Data } from "./types";
 
 const COUNTRIES = gql`
   {
@@ -21,18 +22,8 @@ const COUNTRIES = gql`
   }
 `;
 
-interface Country {
-  code: string;
-  name: string;
-  capital: string;
-}
-
-interface data {
-  countries: Country[];
-}
-
 const App: React.FC = () => {
-  const { data } = useQuery<data>(COUNTRIES);
+  const { data } = useQuery<Data>(COUNTRIES);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [idCountry, setIdCountry] = useState("");
   const [searchInput, setSearchInput] = useState("");
@@ -59,7 +50,7 @@ const App: React.FC = () => {
 
   const filteredCountries =
     data?.countries
-      ?.filter((country) =>
+      ?.filter((country: { name: string }) =>
         country.name.toLowerCase().includes(searchInput.toLowerCase())
       )
       .slice(0, visibleCountries) || [];
@@ -78,8 +69,8 @@ const App: React.FC = () => {
           <Card countries={filteredCountries} onClick={openModal} />
         </div>
         <div className="load-more">
-          {data?.countries?.length > visibleCountries && (
-            <Button type={"button"} onClick={handleLoadMore}>
+          {data?.countries && data.countries.length > visibleCountries && (
+            <Button type="button" onClick={handleLoadMore}>
               Load More
             </Button>
           )}

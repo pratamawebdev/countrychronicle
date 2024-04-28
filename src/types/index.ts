@@ -37,6 +37,7 @@ export interface Country {
 
 export interface Data {
   country: Country;
+  countries: Country[];
 }
 
 export interface ContentModalProps {
