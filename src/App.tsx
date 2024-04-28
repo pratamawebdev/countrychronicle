@@ -32,7 +32,7 @@ interface data {
 }
 
 const App: React.FC = () => {
-  const { loading, error, data } = useQuery<data>(COUNTRIES);
+  const { data } = useQuery<data>(COUNTRIES);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [idCountry, setIdCountry] = useState("");
   const [searchInput, setSearchInput] = useState("");

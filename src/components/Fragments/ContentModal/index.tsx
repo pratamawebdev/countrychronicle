@@ -17,7 +17,7 @@ const COUNTRY = gql`
 `;
 
 const ContentModal: React.FC<{ idCountry: string }> = ({ idCountry }) => {
-  const { loading, error, data } = useQuery<Data>(COUNTRY, {
+  const { data } = useQuery<Data>(COUNTRY, {
     variables: { countryCode: idCountry },
   });
 
